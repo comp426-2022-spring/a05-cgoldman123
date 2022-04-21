@@ -74,6 +74,9 @@ const db = require('./src/services/database.js')
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+// hopefully this allows me to use html
+app.use(express.static('./public'))
+
 
 
 const port = args.port ||  5555

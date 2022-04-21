@@ -29,7 +29,27 @@
     <nav>
       <button id="homenav">Home</button>
       <button id="singlenav">Flip one coin</button>
+
+      <!-- See the results -->
+      <p>Result: <span id="result"></span></p>
+
+      <!-- put the image in of the coin-->
+      <img src="coin.jpg" id="quarter" >
+
       <button id="multinav">Flip multiple coins</button>
+      <h1>Flip a lot of coins!</h1>
+      <form id="coins">
+        <label>
+          <input type="number" name="number" id="number">
+        </label>
+        <input type="submit" value="flip dat shit">
+      </form>
+
+      <h2>Results</h2>
+        <p id="heads"></p>
+        <p id="tails"></p>
+
+
       <button id="guessnav">Guess the result</button>
     </nav>
 
@@ -51,14 +71,6 @@
       
     </div>
 	<script src="main.js">
-    document.addEventListener("click", flipCoin)
-    function flipCoin() {
-      document.getElementById("coin") = "FLIPPED"
-    }
-    
-
-
-
   </script>
   </body>
 </html>
