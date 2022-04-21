@@ -32,6 +32,12 @@
       <button id="multinav">Flip multiple coins</button>
       <button id="guessnav">Guess the result</button>
     </nav>
+
+    <!-- have login form -->
+
+
+
+
     <div id="home">
       
     </div>    
@@ -44,6 +50,15 @@
     <div id="guess" class="hidden">
       
     </div>
-	<script src="main.js"></script>
+	<script src="main.js">
+    document.addEventListener("click", flipCoin)
+    function flipCoin() {
+      document.getElementById("coin") = "FLIPPED"
+    }
+    
+
+
+
+  </script>
   </body>
 </html>
