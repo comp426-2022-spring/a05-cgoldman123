@@ -1,21 +1,27 @@
-
 const coin = document.getElementById("coin")
-coin.document.addEventListener("click", flipCoin)
+coin.addEventListener("click", flipCoin)
+
 function flipCoin() {
+    document.getElementById("coin").innerHTML = "FLIPPED"
     // can possibly take the cors part out. unneeded.
+    try{
     fetch('http://localhost:5555/app/flip', {mode: 'cors'}).then(function(response){
         return response.json()
     })
     .then(function(json){
         console.log(json)
-        document.getElementById("result").innerHTML = json.flip ;
+        document.getElementById("result").innerHTML = json.flip 
         document.getElementById("quarter").setAttribute("src", + json.flip+".jpg")
     })
-    document.getElementById("coin") = "FLIPPED"
+    }
+    catch (e) {
+        document.getElementById("result").innerHTML = e
+    }
+    
 }
 
 const coins = document.getElementById("coins")
-coins.document.addEventListener("submit", flipCoins)
+coins.addEventListener("submit", flipCoins)
 
 async function flipCoins(event) {
     event.preventDefault();
@@ -55,9 +61,11 @@ async function sendFlips({url, formData}) {
 
 
 
+
+
 // Flip one coin and show coin image to match result when button clicked
 
 // Flip multiple coins and show coin images in table as well as summary results
 // Enter number and press button to activate coin flip series
 
-// Guess a flip by clicking either heads or tails button
+// Guess a flip by clicking either heads or tails butto
