@@ -165,6 +165,13 @@ if (args.debug || args.d) {
     res.status(200).json({'raw': coinArray, "summary": mySummary})
   })
 
+  app.get('/app/flip/coins', (req, res, next) => {
+    var coinArray = coinFlips(req.params.number)
+    var mySummary = countFlips(coinArray)
+    res.status(200).json({'raw': coinArray, "summary": mySummary})
+  })
+
+
   app.use(function(req, res) {
     res.status(404).send("404 NOT FOUND")
     res.type("text/plain")  

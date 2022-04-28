@@ -16,15 +16,43 @@ function flipCoin() {
 
 const coins = document.getElementById("coins")
 coins.document.addEventListener("submit", flipCoins)
-function flipCoins() {
-    // can possibly take the cors part out. unneeded.
-    fetch('http://localhost:5555/app/flips/:number', {mode: 'cors'}).then(function(response){
-        return response.json()
-    })
-    .then(function(json){
-    })
-        
+
+async function flipCoins(event) {
+    event.preventDefault();
+
+    const endpoint = "app/flip/coins"
+    const url = document.baseURI+endpoint
+
+    const formEvent = event.currentTarget
+
+    try {
+        const formData = new formData(formEvent);
+        const flips = await sendFlips({url, formData});
+        console.log(flips)
+        document.getElementById("heads").innerHTML = "Heads: "+flips.summary.heads
+        document.getElementById("tails").innerHTML = "Tails: "+flips.summary.tails
+    }
+    catch (e){
+        console.log(e)
+    }  
 }
+async function sendFlips({url, formData}) {
+    const plainFormData = Object.fromEntries(formData.entries())
+    const formDataJson = JSON.stringify(plainFormData)
+    console.log(formDataJson)
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: formDataJson
+    }
+
+    const response = await fetch(url, options)
+    return response.json
+}
+
 
 
 // Flip one coin and show coin image to match result when button clicked
