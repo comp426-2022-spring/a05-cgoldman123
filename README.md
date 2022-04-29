@@ -124,13 +124,13 @@ curl http://localhost:5555/app/flips/7
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/flip/coin
 ```
 
 #### Response body
 
 ```
-
+{"flip":"heads"}
 ```
 
 #### Response headers
