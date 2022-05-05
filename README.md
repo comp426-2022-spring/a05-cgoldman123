@@ -84,13 +84,13 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/flip/
 ```
 
 #### Response body
 
 ```
-
+{"flip":"heads"}
 ```
 
 #### Response headers
@@ -104,13 +104,13 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/flips/7
 ```
 
 #### Response body
 
 ```
-
+{"raw":["tails","tails","tails","tails","heads","heads","heads"],"summary":{"tails":4,"heads":3}}
 ```
 
 #### Response headers
@@ -124,13 +124,13 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/flip/coin
 ```
 
 #### Response body
 
 ```
-
+{"flip":"heads"}
 ```
 
 #### Response headers
@@ -144,13 +144,13 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/flip/call/heads
 ```
 
 #### Response body
 
 ```
-
+{"call":"heads","flip":"heads","result":"win"}
 ```
 
 #### Response headers
@@ -218,7 +218,7 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/log/access
 ```
 
 #### Response body
@@ -238,7 +238,7 @@ Keep-Alive: timeout=5
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/log/access
 ```
 
 #### Response body
@@ -255,18 +255,16 @@ Keep-Alive: timeout=5
 
 ### /app/log/error/ (GET)
 
-_Not yet implemented_
-
 #### Request cURL
 
 ```
-
+curl http://localhost:5555/app/log/error 
 ```
 
 #### Response body
 
 ```
-
+404 NOT FOUND
 ```
 
 #### Response headers

@@ -29,9 +29,39 @@
     <nav>
       <button id="homenav">Home</button>
       <button id="singlenav">Flip one coin</button>
+      <div>
+      <p>Instructions: this is a coin-flipping website. Flip one or several coins and guess the result!</p>
+      </div>
+      <!-- See the results -->
+
+        <button id="coin">Flip one coin</button>
+        <p>Result: <span id="result"></span></p>
+      
+      
+
+      <!-- put the image in of the coin-->
+      <img src="coin.jpg" id="quarter" >
+
       <button id="multinav">Flip multiple coins</button>
+      <h1>Flip a lot of coins!</h1>
+      <form id="coins">
+        <label>
+          <input type="number" name="number" id="number">
+        </label>
+        <input type="submit" value="flip dat shit">
+      </form>
+
+      <h2>Results</h2>
+        <p id="heads"></p>
+        <p id="tails"></p>
+
+
       <button id="guessnav">Guess the result</button>
     </nav>
+
+    <!-- have login form -->
+
+
     <div id="home">
       
     </div>    
@@ -44,6 +74,7 @@
     <div id="guess" class="hidden">
       
     </div>
-	<script src="main.js"></script>
+	<script src="main.js"> defer
+  </script>
   </body>
 </html>
